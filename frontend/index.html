@@ -569,7 +569,7 @@
                             <li><a href="#welcome" class="active">Home</a></li>
                             <li><a href="#products">Products</a></li>
                             <li><a href="#features">How It Works</a></li>
-                            <li><a href="#testimonials">Testimonials</a></li>
+
                             <li>
                                 <a href="#cart-section" style="position: relative;">
                                     <i class="fas fa-shopping-cart"></i> Cart 
@@ -744,7 +744,7 @@
             <div class="center-heading">
                 <h2 class="section-title">Your Shopping Cart</h2>
                 <div class="center-text">
-                    <p>Review your selected items and proceed to checkout</p>
+                   
                 </div>
             </div>
             <div class="row">
@@ -775,9 +775,7 @@
                             <span>Total:</span>
                             <span id="cart-total">₹0</span>
                         </div>
-                        <button class="btn btn-primary w-100 mb-2" id="checkout-btn" disabled>
-                            <i class="fas fa-lock"></i> Proceed to Checkout
-                        </button>
+
                         <button class="btn btn-outline-secondary w-100" id="clear-cart-btn">
                             <i class="fas fa-trash"></i> Clear Cart
                         </button>
@@ -805,67 +803,16 @@
             </div>
         </div>
     </div>
-</section>
+</section>why 
 
-    <!-- ***** Testimonials Start ***** -->
-    <section class="section colored" id="testimonials">
-        <div class="container">
-            <div class="center-heading">
-                <h2 class="section-title">What Our Customers Say</h2>
-                <div class="center-text">
-                    <p>Don't just take our word for it. Here's what our satisfied customers have to say about their LoopCart experience.</p>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="team-item">
-                        <div class="team-content">
-                            <i class="fas fa-quote-left"></i>
-                            <p class="my-4">"I found a perfect laptop for my college studies at half the market price. The seller was genuine and the product was exactly as described!"</p>
-                            <div class="team-info">
-                                <h3 class="user-name">Priya Sharma</h3>
-                                <span>College Student, Delhi</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="team-item">
-                        <div class="team-content">
-                            <i class="fas fa-quote-left"></i>
-                            <p class="my-4">"Sold my old furniture quickly and got a fair price. LoopCart made the process so simple and secure. Highly recommended!"</p>
-                            <div class="team-info">
-                                <h3 class="user-name">Rahul Verma</h3>
-                                <span>Home Owner, Mumbai</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="team-item">
-                        <div class="team-content">
-                            <i class="fas fa-quote-left"></i>
-                            <p class="my-4">"The WhatsApp integration is brilliant! I could instantly contact sellers and negotiate prices. Bought 3 items already!"</p>
-                            <div class="team-info">
-                                <h3 class="user-name">Anita Patel</h3>
-                                <span>Frequent Buyer, Bangalore</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ***** Footer Start ***** -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>&copy; 2023 LoopCart - Your Trusted Secondhand Marketplace. All rights reserved.</p>
+                    <p>&copy; 2025 LoopCart - Your Trusted Secondhand Marketplace. All rights reserved.</p>
                     <p class="mt-2" style="opacity: 0.8;">Made with ❤️ for eco-conscious shoppers</p>
                 </div>
             </div>
@@ -1060,31 +1007,27 @@
             }
 
             addToCart(productId) {
-                try {
-                    const product = this.products.find(p => p._id === productId);
-                    if (!product) return;
+                const product = this.products.find(p => p._id === productId);
+                if (!product) return;
 
-                    const existingItem = this.cart.find(item => item.productId === productId);
-                    
-                    if (existingItem) {
-                        existingItem.quantity += 1;
-                    } else {
-                        this.cart.push({
-                            productId: product._id,
-                            name: product.name,
-                            price: product.price,
-                            image: product.image,
-                            quantity: 1,
-                            location: product.location
-                        });
-                    }
+                const existingItem = this.cart.find(item => item.productId === productId);
 
-                    localStorage.setItem('loopcart-cart', JSON.stringify(this.cart));
-                    this.updateUI();
-                    this.showNotification(`${product.name} added to cart!`, 'success');
-                } catch (error) {
-                    this.showNotification('Failed to add item to cart', 'error');
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    this.cart.push({
+                        productId: product._id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        quantity: 1,
+                        location: product.location
+                    });
                 }
+
+                localStorage.setItem('loopcart-cart', JSON.stringify(this.cart));
+                this.updateUI();
+                this.showNotification(`${product.name} added to cart!`, 'success');
             }
 
             removeFromCart(productId) {
@@ -1164,6 +1107,9 @@
 
                 // Update cart page
                 this.renderCartPage();
+
+                // Update wishlist page
+                this.renderWishlistPage();
             }
 
             renderCartPage() {
@@ -1215,11 +1161,59 @@
                 const total = subtotal + tax;
 
                 document.getElementById('cart-subtotal').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
-              
+
                 document.getElementById('cart-tax').textContent = `₹${tax.toLocaleString('en-IN')}`;
                 document.getElementById('cart-total').textContent = `₹${total.toLocaleString('en-IN')}`;
-                
+
                 document.getElementById('checkout-btn').disabled = this.cart.length === 0;
+            }
+
+    renderWishlistPage() {
+        const wishlistItemsElement = document.getElementById('wishlist-items');
+
+        if (!wishlistItemsElement) return;
+
+        if (this.wishlist.length === 0) {
+            wishlistItemsElement.innerHTML = `
+                <div class="col-12 text-center">
+                    <i class="fas fa-heart" style="font-size: 4rem; color: #ccc; margin-bottom: 20px;"></i>
+                    <h4>Your wishlist is empty</h4>
+                    <p>Start adding items to your wishlist by clicking the heart icon!</p>
+                    <a href="#products" class="btn btn-primary">Browse Products</a>
+                </div>
+            `;
+            return;
+        }
+
+                wishlistItemsElement.innerHTML = this.wishlist.map(item => `
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <div class="product-image" style="background-image: url('${item.image}')"></div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title">${item.name}</h5>
+                                    <button class="wishlist-btn active" onclick="loopCart.toggleWishlist('${item.id}')">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                                <p class="product-price">₹${item.price.toLocaleString('en-IN')}</p>
+                                <p class="product-location">
+                                    <i class="fas fa-map-marker-alt"></i> ${item.location.charAt(0).toUpperCase() + item.location.slice(1)}
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <button class="btn btn-primary" onclick="loopCart.addToCart('${item.id}')">
+                                        <i class="fas fa-cart-plus"></i> Add to Cart
+                                    </button>
+                                    <button class="btn btn-outline-danger" onclick="loopCart.toggleWishlist('${item.id}')">
+                                        <i class="fas fa-trash"></i> Remove
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
             }
 
             setupEventListeners() {
@@ -1347,5 +1341,79 @@
             window.loopCart = new LoopCart();
         });
     </script>
+
+
+
+
+<!-- 3D Product Viewer Modal -->
+<div class="modal fade" id="product3dModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="product3dModalLabel">Product View</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="product-3d-container">
+                    <div class="product-3d-view" id="product3dView">
+                        <img src="" alt="Product 3D View" id="product3dImage" class="product-3d-img">
+                    </div>
+                    <div class="3d-controls mt-3">
+                        <button class="btn btn-outline-primary btn-sm" onclick="rotateProduct('left')">
+                            <i class="fas fa-undo"></i> Rotate Left
+                        </button>
+                        <button class="btn btn-outline-primary btn-sm" onclick="rotateProduct('reset')">
+                            <i class="fas fa-sync"></i> Reset
+                        </button>
+                        <button class="btn btn-outline-primary btn-sm" onclick="rotateProduct('right')">
+                            <i class="fas fa-redo"></i> Rotate Right
+                        </button>
+                    </div>
+                </div>
+                <div class="product-details mt-3">
+                    <h4 id="3dProductName"></h4>
+                    <p class="text-muted" id="3dProductDescription"></p>
+                    <p class="product-price" id="3dProductPrice"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Location Picker Modal -->
+<div class="modal fade" id="locationModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Pickup Location</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="locationMap" style="height: 300px; background: #f8f9fa; border-radius: 8px; margin-bottom: 15px;">
+                    <div class="text-center py-5 text-muted">
+                        <i class="fas fa-map-marker-alt fa-2x mb-2"></i>
+                        <p>Map Loading...</p>
+                    </div>
+                </div>
+                <div class="location-details">
+                    <h6><i class="fas fa-map-pin"></i> Seller Location</h6>
+                    <p id="sellerAddress" class="mb-2"></p>
+                    <p class="text-muted small" id="pickupInstructions"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="openDirections()">
+                    <i class="fas fa-directions"></i> Get Directions
+                </button>
+                <button class="btn btn-success" onclick="confirmPickup()">
+                    <i class="fas fa-check"></i> Confirm Pickup
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 </body>
 </html>
