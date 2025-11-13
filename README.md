@@ -1,12 +1,10 @@
 🛒 LoopCart – Dynamic Secondhand Marketplace
-<p align="center"> <img src="https://via.placeholder.com/1200x400/ff4d94/ffffff?text=LoopCart+-+Secondhand+Marketplace" alt="LoopCart Banner"> </p>
 
 A modern, full-stack secondhand marketplace combining a vanilla JavaScript frontend with a Node.js + Express + MongoDB backend, providing a smooth, React-like shopping experience.
 
 ✨ Featured On
 <p> <img src="https://img.shields.io/badge/Backend-Node.js-green?style=for-the-badge&logo=nodedotjs" /> <img src="https://img.shields.io/badge/Database-MongoDB-darkgreen?style=for-the-badge&logo=mongodb" /> <img src="https://img.shields.io/badge/JavaScript-ES6%2B-yellow?style=for-the-badge&logo=javascript" /> <img src="https://img.shields.io/badge/Design-Responsive-blue?style=for-the-badge" /> </p>
-📸 Preview
-<table> <tr> <td align="center"><img src="https://via.placeholder.com/300x200/667eea/ffffff?text=Home+Page"/><br><b>Home Page</b></td> <td align="center"><img src="https://via.placeholder.com/300x200/ff4d94/ffffff?text=Wishlist"/><br><b>Wishlist</b></td> <td align="center"><img src="https://via.placeholder.com/300x200/764ba2/ffffff?text=Cart"/><br><b>Cart</b></td> </tr> </table>
+
 🎯 Key Features
 🛍️ Shopping Experience
 
