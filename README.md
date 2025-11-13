@@ -62,7 +62,7 @@ A fully-featured, dynamic e-commerce platform built with vanilla JavaScript that
 ### Method 1: Simple HTML (No Setup Required)
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/loopcart-project.git
+git clone https://github.com/your-username/loopcart-project-1.git
 
 # Open in browser
 cd loopcart-project/frontend
