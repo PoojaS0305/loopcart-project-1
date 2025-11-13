@@ -1,69 +1,118 @@
-# 🛒 LoopCart - Dynamic Secondhand Marketplace
+🛒 LoopCart – Dynamic Secondhand Marketplace
+<p align="center"> <img src="https://via.placeholder.com/1200x400/ff4d94/ffffff?text=LoopCart+-+Secondhand+Marketplace" alt="LoopCart Banner"> </p>
 
-![LoopCart Banner](https://via.placeholder.com/1200x400/ff4d94/ffffff?text=LoopCart+-+Secondhand+Marketplace)
+A modern, full-stack secondhand marketplace combining a vanilla JavaScript frontend with a Node.js + Express + MongoDB backend, providing a smooth, React-like shopping experience.
 
-A fully-featured, dynamic e-commerce platform built with vanilla JavaScript that provides a React-like experience with real-time cart management, wishlist functionality, and intelligent product filtering.
+✨ Featured On
+<p> <img src="https://img.shields.io/badge/Backend-Node.js-green?style=for-the-badge&logo=nodedotjs" /> <img src="https://img.shields.io/badge/Database-MongoDB-darkgreen?style=for-the-badge&logo=mongodb" /> <img src="https://img.shields.io/badge/JavaScript-ES6%2B-yellow?style=for-the-badge&logo=javascript" /> <img src="https://img.shields.io/badge/Design-Responsive-blue?style=for-the-badge" /> </p>
+📸 Preview
+<table> <tr> <td align="center"><img src="https://via.placeholder.com/300x200/667eea/ffffff?text=Home+Page"/><br><b>Home Page</b></td> <td align="center"><img src="https://via.placeholder.com/300x200/ff4d94/ffffff?text=Wishlist"/><br><b>Wishlist</b></td> <td align="center"><img src="https://via.placeholder.com/300x200/764ba2/ffffff?text=Cart"/><br><b>Cart</b></td> </tr> </table>
+🎯 Key Features
+🛍️ Shopping Experience
 
-## 🚀 Live Demo
-**[👉 View Live Demo](https://your-username.github.io/LoopCart-Project/)**
+Real-time cart & wishlist
 
-## ✨ Featured On
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge&logo=javascript)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5.0+-purple?style=for-the-badge&logo=bootstrap)
-![LocalStorage](https://img.shields.io/badge/State-LocalStorage-blue?style=for-the-badge)
-![Responsive](https://img.shields.io/badge/Design-Responsive-green?style=for-the-badge)
+Heart icon toggle
 
-## 📸 Preview
+Advanced product filtering (category, location, price)
 
-| Homepage | Product Grid | Shopping Cart |
-|----------|-------------|---------------|
-| ![Home](https://via.placeholder.com/300x200/667eea/ffffff?text=Home+Page) | ![Products](https://via.placeholder.com/300x200/764ba2/ffffff?text=Products) | ![Cart](https://via.placeholder.com/300x200/ff4d94/ffffff?text=Shopping+Cart) |
+WhatsApp seller contact
 
-## 🎯 Key Features
+Smooth UI interactions
 
-### 🛍️ **Dynamic Shopping Experience**
-- **Real-time Cart Management** - Add/remove items with instant quantity updates
-- **Interactive Wishlist** - Save favorites with heart icon toggles
-- **Smart Product Filtering** - Search by category, location, and price range
-- **Persistent State** - Data survives page refreshes using LocalStorage API
+💾 Persistent State
 
-### 💡 **Advanced JavaScript Implementation**
-- **ES6+ Class Architecture** - Modular, maintainable code structure
-- **Event Delegation** - Efficient DOM manipulation
-- **Dynamic Rendering** - Client-side templating without page reloads
-- **State Management** - Centralized cart and wishlist management
+Wishlist & cart saved with LocalStorage
 
-### 📱 **Modern UX/UI**
-- **Responsive Design** - Flawless experience across all devices
-- **Smooth Animations** - CSS transitions and micro-interactions
-- **WhatsApp Integration** - Direct seller communication
-- **Toast Notifications** - User feedback for all actions
+Auto-syncs with frontend UI
 
-## 🛠️ Tech Stack
+🖥️ Backend Features
 
-**Frontend Architecture**
+Node.js + Express REST API
 
-📦 Frontend
-├── 🏗️ Vanilla JavaScript (ES6+)
-├── 🎨 Bootstrap 5 + Custom CSS
-├── 🔧 Font Awesome Icons
-├── 💾 LocalStorage API
-└── 📱 Responsive Grid System
+MongoDB product database
+
+Fully integrated frontend serving
+
+Production-ready setup
+
+🛠️ Tech Stack
+Frontend
+
+Vanilla JavaScript (ES6+)
+
+Bootstrap 5 + Custom CSS
+
+LocalStorage API
+
+Responsive UI
+
+Backend
+
+Node.js
+
+Express.js
+
+MongoDB + Mongoose
+
+🚀 Quick Start — Run the Full Project Locally
+
+The backend automatically serves the frontend at:
+
+👉 http://localhost:5000
+
+1️⃣ Clone the Repository
+git clone https://github.com/PoojaS0305/loopcart-project-1.git
+cd loopcart-project-1
+
+2️⃣ Install Backend Dependencies
+cd backend
+npm install
+
+3️⃣ Create .env File
+
+Inside backend/, create a file named .env:
+
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/loopcart
 
 
-**Key Technologies**
-- **JavaScript**: Modern ES6+ features, Classes, Modules, LocalStorage
-- **CSS3**: Flexbox, Grid, Animations, Custom Properties
-- **HTML5**: Semantic markup, Accessibility features
-- **Bootstrap 5**: Responsive grid, components, utilities
+Start your MongoDB server before running the backend.
 
-## 🚀 Quick Start
+4️⃣ Start the Server
+node server.js
 
-### Method 1: Simple HTML (No Setup Required)
-```bash
-# Clone the repository
-git clone https://github.com/your-username/loopcart-project-1.git
 
-# Open in browser
-cd loopcart-project/frontend
-open index.html
+You should see:
+
+🚀 Server running on http://localhost:5000
+📁 Serving frontend from: ../frontend
+✅ Connected to MongoDB
+
+5️⃣ Open the App
+http://localhost:5000
+
+
+Or specific sections:
+
+Cart → http://localhost:5000/#cart-section
+
+Wishlist → http://localhost:5000/#wishlist-section
+
+📂 Project Structure
+loopcart-project/
+│
+├── backend/
+│     ├── server.js
+│     ├── package.json
+│     ├── .env
+│
+└── frontend/
+      ├── index.html
+      ├── styles.css
+      ├── script.js
+      ├── assets/
+
+🙌 Author
+
+🎀 Developed by Pooja S
